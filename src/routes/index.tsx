@@ -36,16 +36,7 @@ function App() {
                 <Link to="/recipe/my" className="btn btn-secondary btn-lg rounded-full">
                   Continue Cooking
                 </Link>
-              ) : (
-                <>
-                  <Link to="/login" className="btn btn-ghost btn-lg rounded-full">
-                    Log In
-                  </Link>
-                  <Link to="/signup" className="btn btn-secondary btn-lg rounded-full">
-                    Sign Up
-                  </Link>
-                </>
-              )}
+              ) : null}
             </div>
           </div>
 
