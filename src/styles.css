@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --kitchen-cream: #fffaf1;
+  --kitchen-peach: #ffe6c7;
+  --kitchen-sage: #e2f1df;
+  --kitchen-olive: #5c7c53;
+  --kitchen-ink: #243127;
+  --kitchen-gold: #b8742a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+html {
+  background: var(--kitchen-cream);
+}
+
+body {
+  margin: 0;
+  color: var(--kitchen-ink);
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at top left, rgba(255, 230, 199, 0.88), transparent 28%),
+    radial-gradient(circle at top right, rgba(226, 241, 223, 0.92), transparent 30%),
+    linear-gradient(180deg, #fffef9 0%, #fff7ef 52%, #f7f3ea 100%);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.3;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(circle at 50% 18%, black, transparent 78%);
+}
+
+a {
+  text-decoration: none;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 1.5rem));
+  margin-inline: auto;
+}
+
+.brand-title {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+.section-label {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--kitchen-gold);
+}
+
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(88, 60, 24, 0.08);
+}
+
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  right: -8rem;
+  bottom: -8rem;
+  height: 22rem;
+  width: 22rem;
+  border-radius: 999px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), transparent 66%);
+}
+
+.glass-panel {
+  box-shadow: 0 18px 48px rgba(48, 61, 40, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.fade-up {
+  animation: fade-up 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
