@@ -4,6 +4,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 
 import authClient from "../../lib/auth-client";
+import { formatRecipeDate } from "../../lib/utils";
 import {
   getAuthorRecipes,
   removeRecipe,
@@ -177,7 +178,7 @@ function MyRecipesRoute() {
                       {recipe.title || "Untitled recipe"}
                     </Link>
                     <p className="mt-3 text-sm text-base-content/60">
-                      Added {new Date(recipe.createdAt).toLocaleDateString()}
+                      Added {formatRecipeDate(recipe.createdAt)}
                     </p>
                     {recipe.overview ? (
                       <p className="mt-4 text-sm leading-7 text-base-content/72">{recipe.overview}</p>

@@ -135,19 +135,19 @@ export default function AuthPage({ mode }: AuthPageProps) {
           style={{ animationDelay: "120ms" }}
         >
           <div className="card-body p-6 sm:p-8">
-            <form className="space-y-4" onSubmit={handleEmailAuth}>
+            <form className="space-y-6" onSubmit={handleEmailAuth}>
               <div>
                 <p className="section-label mb-3">Account access</p>
                 <h2 className="text-3xl font-semibold text-base-content">{submitLabel}</h2>
               </div>
 
               {mode === "signup" ? (
-                <label className="form-control w-full">
+                <label className="form-control w-full ">
                   <div className="label">
                     <span className="label-text font-medium">Name</span>
                   </div>
                   <input
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full mb-4"
                     type="text"
                     value={name}
                     onChange={(event) => setName(event.target.value)}
@@ -158,12 +158,12 @@ export default function AuthPage({ mode }: AuthPageProps) {
                 </label>
               ) : null}
 
-              <label className="form-control w-full">
+              <label className="form-control w-full ">
                 <div className="label">
                   <span className="label-text font-medium">Email</span>
                 </div>
                 <input
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full mb-4"
                   type="email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
@@ -173,12 +173,12 @@ export default function AuthPage({ mode }: AuthPageProps) {
                 />
               </label>
 
-              <label className="form-control w-full">
+              <label className="form-control w-full ">
                 <div className="label">
                   <span className="label-text font-medium">Password</span>
                 </div>
                 <input
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full mb-4"
                   type="password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
@@ -194,7 +194,7 @@ export default function AuthPage({ mode }: AuthPageProps) {
                     <span className="label-text font-medium">Confirm password</span>
                   </div>
                   <input
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full mb-4"
                     type="password"
                     value={confirmPassword}
                     onChange={(event) => setConfirmPassword(event.target.value)}

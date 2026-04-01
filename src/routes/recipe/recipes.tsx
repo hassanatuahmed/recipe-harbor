@@ -7,6 +7,7 @@ import { useState } from "react";
 import authClient from "../../lib/auth-client";
 import prisma from "../../lib/prisma";
 import auth from "../../lib/server/auth";
+import { formatRecipeDate } from "../../lib/utils";
 
 const authorSelect = {
   id: true,
@@ -413,7 +414,7 @@ function RecipesRoute() {
                       {recipe.title || "Untitled recipe"}
                     </Link>
                     <p className="mt-3 text-sm text-base-content/60">
-                      By {recipe.author.name || "Anonymous"} / Added {new Date(recipe.createdAt).toLocaleDateString()}
+                      By {recipe.author.name || "Anonymous"} / Added {formatRecipeDate(recipe.createdAt)}
                     </p>
                     {recipe.overview ? (
                       <p className="mt-4 text-sm leading-7 text-base-content/72">{recipe.overview}</p>

@@ -3,6 +3,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 import Footer from '../components/PostError'
 import Header from '../components/Header'
+import NotFound from '../components/NotFound'
 
 import appCss from '../styles.css?url'
 
@@ -19,6 +20,20 @@ export const Route = createRootRoute({
       {
         title: 'Recipe Harbor',
       },
+
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap",
+      },
     ],
     links: [
       {
@@ -27,6 +42,7 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  notFoundComponent: NotFound,
   shellComponent: RootDocument,
 })
 

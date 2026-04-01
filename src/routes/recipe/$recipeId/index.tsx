@@ -1,6 +1,7 @@
 import { Link, createFileRoute, notFound } from '@tanstack/react-router'
 
 import authClient from '../../../lib/auth-client'
+import { formatRecipeDate } from '../../../lib/utils'
 import { getRecipeById } from '../recipes'
 
 export const Route = createFileRoute('/recipe/$recipeId/')({
@@ -42,7 +43,7 @@ function RecipeDetailsRoute() {
                 {recipe.title || 'Untitled recipe'}
               </h1>
               <p className="mt-4 text-sm text-base-content/65">
-                By {recipe.author.name || 'Anonymous'} / Added {new Date(recipe.createdAt).toLocaleDateString()}
+                By {recipe.author.name || 'Anonymous'} / Added {formatRecipeDate(recipe.createdAt)}
               </p>
               {recipe.overview ? (
                 <p className="mt-5 max-w-3xl text-base leading-8 text-base-content/70">{recipe.overview}</p>
